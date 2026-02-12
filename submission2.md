@@ -164,8 +164,33 @@ Date:   Thu Feb 12 13:54:59 2026 +0300
     First commit
 .
 
+3. 
 
+* 1d9bc54 (side-branch) Side branch commit
+* d90db47 (HEAD -> labs, origin/labs) submission extended
+*   dff99a6 Merge branch 'labs' of https://github.com/Liminium/DevOpsHW into labs
+|\
+| * 8744e4b Update sumbussion1.md
+* | 3193784 Made submission2.md
+|/
+* 74020c5 add sumbission
+* 1e42cf4 (origin/feature/lab1, feature/lab1) Delete trash files
+* 89e9c97 test signed commit
+* d3fe943 ASD
+* 9a7d1b5 ad
+* 7c5f607 Verification proof
+* a89d0cd Test2
+* 34ad430 Revert "adding .github"
+| * a950f20 (git-reset-practice) First commit
+| * 5bf0b26 Third commit
+| * dc4158b Third commit
+| * 5e3ef7c Second commit
+| * d141ba7 First commit
+| * 0fa52a3 (main) Add test file
+|/
+* 7db866f (origin/main) adding .github
+* 3c044e6 message
 
-
-
+Когда линии расходятся, это значит, что мой локальный репозиторий ветки labs и удаленный начинают отличаться.
+Левая часть графа - это по всей видимости глобальная, правая - локальная. Чем ниже - тем старше действие.
 
