@@ -195,5 +195,103 @@ Date:   Thu Feb 12 13:54:59 2026 +0300
 Левая часть графа - это по всей видимости глобальная, правая - локальная. Чем ниже - тем старше действие.
 
 
-4. Тэги просто позволяют дать более осмысленное название комиту, если он важен (релизы важные или сутпени развития приложения)
+4. Теги просто позволяют дать более осмысленное название последнему комиту, если он важен (релизы важные или сутпени развития приложения)
 
+Теги: tag v1.0.0, v1.1.0, v1.2.0, v1.1.1.
+
+Например, у меня комиту d90db473138fa59765f07d3df63aec97f6b70250 соответствует тег v1.0.0
+
+5.
+Использование первой команды:
+
+C:\Users\Umion\Desktop\devopshw>git checkout -b cmd-compare2
+Switched to a new branch 'cmd-compare2'
+
+C:\Users\Umion\Desktop\devopshw>echo "scratch" >> demo.txt
+
+C:\Users\Umion\Desktop\devopshw>git add demo.txt
+
+C:\Users\Umion\Desktop\devopshw>git commit -m "ASD"
+[cmd-compare2 3d08845] ASD
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo.txt
+
+C:\Users\Umion\Desktop\devopshw>echo "adasads" >> demo.txt
+
+C:\Users\Umion\Desktop\devopshw>demo.txt - "scratch\nadasads" 
+
+C:\Users\Umion\Desktop\devopshw>git restore demo.txt
+
+C:\Users\Umion\Desktop\devopshw>demo.txt "scratch"
+
+Использование второй команды:
+
+C:\Users\Umion\Desktop\devopshw>echo "asd" >> demo.txt
+
+C:\Users\Umion\Desktop\devopshw>git add demo.txt
+
+C:\Users\Umion\Desktop\devopshw>git restore --staged demo.txt
+
+Использование третьей команды:
+
+C:\Users\Umion\Desktop\devopshw>echo "asd" >> demo.txt - щас в demo есть строчка asd
+
+C:\Users\Umion\Desktop\devopshw>demo.txt
+
+C:\Users\Umion\Desktop\devopshw>git log
+commit 3d08845ef86614383f07313f48f3d891f5f16b71 (HEAD -> cmd-compare2)
+Author: Umion <geometrydashofzheka@gmail.com>
+Date:   Thu Feb 12 22:21:09 2026 +0300
+
+    ASD
+
+commit 99161a5529be5aa8541d89033ddcffe550e61718 (origin/labs, cmd-compare)
+Author: Umion <geometrydashofzheka@gmail.com>
+Date:   Thu Feb 12 22:06:16 2026 +0300
+
+    4-th task
+
+commit 0defaaafeec5be60fc548a4b7ee9de33ee4a81fd (tag: v1.2.0, tag: v1.1.1, tag: v1.1.0)
+Merge: bae6cad a9d575e
+Author: Umion <geometrydashofzheka@gmail.com>
+Date:   Thu Feb 12 22:01:32 2026 +0300
+
+    Merge branch 'labs' of https://github.com/Liminium/DevOpsHW into labs
+
+commit bae6cadca1eb2a456c356407b281e0c56ff5d511
+Author: Umion <geometrydashofzheka@gmail.com>
+Date:   Thu Feb 12 22:01:00 2026 +0300
+
+    again modified
+
+commit a9d575e60c1e89adcf33525c5a0dadbf6c731ad9
+Author: Liminium <96349641+Liminium@users.noreply.github.com>
+Date:   Thu Feb 12 21:42:37 2026 +0300
+
+C:\Users\Umion\Desktop\devopshw>git restore --source 3d08845ef86614383f07313f48f3d891f5f16b71 demo.txt
+
+C:\Users\Umion\Desktop\devopshw>demo.txt - щас тут только scratch
+
+Вызов команды show:
+
+C:\Users\Umion\Desktop\devopshw>git show
+commit 3d08845ef86614383f07313f48f3d891f5f16b71 (HEAD -> cmd-compare2)
+Author: Umion <geometrydashofzheka@gmail.com>
+Date:   Thu Feb 12 22:21:09 2026 +0300
+
+    ASD
+
+diff --git a/demo.txt b/demo.txt
+new file mode 100644
+index 0000000..e58c051
+--- /dev/null
++++ b/demo.txt
+@@ -0,0 +1 @@
++"scratch"
+
+1. git restore demo.txt - отменить незакомиченное действие
+2. git restore --staged demo.txt - убрать из зоны для комита
+3. git restore --source HASH/HEAD~N demo.txt - изменить состояние файла на то, какое было при указанном комите.
+
+6. Звездочки показывают, что ты следишь за треднами и являешься активным пользователем github.
+Following позволяет тебе следить за топовыми проектами, изучать, над чем работают твои друзья и топовые программисты и т.д.
